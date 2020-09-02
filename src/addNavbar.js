@@ -1,7 +1,7 @@
 export default generateNavbar
 
 
-let content = document.querySelector("#content");
+let navOuterWrapper = document.querySelector(".navOuterWrapper");
 
 function generateNavbar(){
 	let outerWrapper = document.createElement('div');
@@ -18,7 +18,7 @@ function generateNavbar(){
 	mobileMenuWrapper.setAttribute("class", "mobile-menu")
 
 
-	content.appendChild(outerWrapper);
+	navOuterWrapper.appendChild(outerWrapper);
 	outerWrapper.appendChild(navLogo);
 	navLogo.appendChild(navLogoText)
 	outerWrapper.appendChild(ul)
@@ -32,23 +32,27 @@ function generateNavbar(){
 		if(i == 0) {
 			ul.appendChild(li);
 			a.textContent = "Home";
+			a.setAttribute("class", "nav-home");
 			a.href = "#"
 			li.appendChild(a);
 		} else if (i == 1) {
 			ul.appendChild(li);
 			a.textContent = "About";
+			a.setAttribute("class", "nav-about");
 			a.href = "#"
 			li.appendChild(a);
 
 		} else if (i== 2) {
 			ul.appendChild(li);
 			a.textContent = "Menu";
+			a.setAttribute("class", "nav-menu");
 			a.href = "#"
 			li.appendChild(a);
 		} else {
 			ul.appendChild(li);
 			a.textContent = "Contact";
-			a.href = "#"
+			a.setAttribute("class", "nav-contact");
+			a.href = "#";
 			li.appendChild(a);
 		}
 	 
